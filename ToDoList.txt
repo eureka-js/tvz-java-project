@@ -1,0 +1,45 @@
+
+abstract class +
+interface +
+sealed interface +
+records +
+builder pattern +
+
+exceptions & logback +
+2 checked & 2 unchecked exceptions +
+    (one checked exception was removed from the code before publishing the project as a public repository on GitHub
+     due to it containing personal data)
+
+List +
+Set +
+Map +
+Lambdas for sorting & filtering +
+
+>=2 generic classes +
+    1. class 1 generic parameter +
+    2. class 2 generic parameters +
+
+textual file for usernames & hashed(?) passwords +
+binary files - serialization & deserialization of done changes in the app +
+
+JavaFX screen for login - >=2 users +
+
+JavaFX screen for:
+    searching & filtering data +
+    adding new entities +
+    changing existing entities (are you sure screen) +
+    deleting entities (are you sure screen) +
+
+JavaFX screen for showing every change done in app (serialized data) +
+every change contains:
+    changed data +
+    new & old value +
+    user that changed it +
+    date & time of change +
+
+Data structure containing data of all entities +
+    class implementing functionalities of creating & closing connection with data structure, +
+    executing queries & fetching data +
+
+Threads +
+    refreshing data on screen and concurrent accessing of shared resource... +

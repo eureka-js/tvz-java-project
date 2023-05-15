@@ -1,0 +1,8 @@
+This project utilizes the H2 database. To get it functioning, simply download the H2 database and run it
+(the process may vary).
+
+The properties for connecting to the database can be found in the file "IO_files/database/database.properties".
+
+The script for creating tables can be found in the file "for_initializing_h2_database/sql_script_for_the_database.txt".
+
+It is crucial to read the file "for_initializing_h2_database/methods.txt" for initialization instructions.

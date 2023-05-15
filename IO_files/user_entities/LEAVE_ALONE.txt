@@ -1,0 +1,6 @@
+This file was created to prevent GitHub from deleting the "user_entities" directory.
+Without it, the program will encounter an error as it won't find a designated location to store user game data.
+
+While this directory is not essential when solely using the database, it is recommended to keep it intact.
+
+IT IS EXTREMELY IMPORTANT NOT TO LEAVE THIS DIRECTORY EMPTY OR DELETE IT!

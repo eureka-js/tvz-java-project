@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="mainStackPane" onKeyPressed="#escapePress" prefHeight="720.0" prefWidth="1280.0" stylesheets="@general_style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.LoginController">
+   <children>
+      <BorderPane fx:id="exitBorderPane" minHeight="400.0" minWidth="200.0" prefHeight="200.0" prefWidth="200.0">
+         <center>
+            <VBox alignment="CENTER" prefHeight="539.0" prefWidth="1179.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Text fx:id="exitUSureText" strokeType="OUTSIDE" strokeWidth="0.0" text="Are you sure You want to Exit?" wrappingWidth="200.9296875" />
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="1280.0">
+                     <children>
+                        <Button fx:id="yesButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onYesButtonPressed" text="Yes">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="noButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onNoButtonPressed" text="No" textAlignment="CENTER" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+      <BorderPane fx:id="mainBorderPane" prefHeight="200.0" prefWidth="200.0">
+         <center>
+            <VBox alignment="CENTER" fillWidth="false" minHeight="400.0" minWidth="200.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" fillWidth="false" prefHeight="104.0" prefWidth="1280.0">
+                     <children>
+                        <TextArea fx:id="TitleTextArea" disable="true" editable="false" minHeight="108.0" minWidth="341.0" opacity="0.44" prefHeight="108.0" prefWidth="341.0" text="  ____                                  _      &#10; |  _ \ _   _ _ __   _____   ____ _  __| | ___ &#10; | |_) | | | | '_ \ / _ \ \ / / _` |/ _` |/ _ \&#10; |  _ &lt;| |_| | | | |  __/\ V / (_| | (_| |  __/&#10; |_| \_\\__,_|_| |_|\___| \_/ \__,_|\__,_|\___|&#10;                                               " />
+                     </children>
+                  </VBox>
+                  <StackPane alignment="BOTTOM_CENTER" prefHeight="157.0" prefWidth="1280.0">
+                     <children>
+                        <VBox fx:id="deleteVbox" alignment="BOTTOM_CENTER" fillWidth="false" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label fx:id="delMessageAlertLabel" alignment="CENTER" prefHeight="17.0" prefWidth="280.0">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="usernameDelTextField" alignment="CENTER" prefHeight="25.0" prefWidth="128.0" promptText="username">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin></TextField>
+                              <PasswordField fx:id="pass1DelPassField" alignment="CENTER" prefHeight="25.0" prefWidth="128.0" promptText="password">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </PasswordField>
+                              <PasswordField fx:id="pass2DelPassField" alignment="CENTER" prefHeight="25.0" prefWidth="128.0" promptText="repeat password">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </PasswordField>
+                              <Button mnemonicParsing="false" onAction="#onDelButtonPress" prefHeight="25.0" prefWidth="70.0" text="Delete">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="registerVBox" alignment="BOTTOM_CENTER" fillWidth="false" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label fx:id="regAlertMessageLabel" alignment="CENTER" prefHeight="17.0" prefWidth="280.0" />
+                              <TextField fx:id="regUserNameTextField" alignment="CENTER" onKeyPressed="#registerOnEnterPress" prefHeight="25.0" prefWidth="128.0" promptText="username">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <PasswordField fx:id="regUserPasswordField" alignment="CENTER" onKeyPressed="#registerOnEnterPress" prefHeight="25.0" prefWidth="128.0" promptText="password">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </PasswordField>
+                              <PasswordField fx:id="regUserPasswordField1" alignment="CENTER" onKeyPressed="#registerOnEnterPress" prefHeight="25.0" prefWidth="128.0" promptText="repeat password">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </PasswordField>
+                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#onRegisterButtonPressed" prefHeight="25.0" prefWidth="70.0" text="Submit">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="loginVBox" alignment="BOTTOM_CENTER" fillWidth="false" prefHeight="282.0" prefWidth="1280.0">
+                           <children>
+                              <Label fx:id="alertMessageLabel" alignment="CENTER" prefHeight="17.0" prefWidth="280.0">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="userNameTextField" alignment="CENTER" maxWidth="128.0" onKeyPressed="#logInOnEnterPress" prefHeight="25.0" prefWidth="128.0" promptText="username">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <PasswordField fx:id="userPassTextField" alignment="CENTER" maxWidth="128.0" onKeyPressed="#logInOnEnterPress" prefHeight="25.0" prefWidth="128.0" promptText="password">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </PasswordField>
+                              <Button fx:id="log" alignment="CENTER" mnemonicParsing="false" onAction="#onLoginButtonPressed" prefHeight="25.0" prefWidth="70.0" text="Login">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </StackPane>
+                  <ChoiceBox fx:id="modeSetChoiceBox" prefHeight="25.0" prefWidth="128.0">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </ChoiceBox>
+                  <Button fx:id="exitButton" alignment="CENTER" mnemonicParsing="false" onAction="#onExitButtonPressed" prefHeight="25.0" prefWidth="50.0" text="Exit">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </center>
+         <top>
+            <VBox alignment="BOTTOM_RIGHT" prefHeight="76.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </VBox>
+         </top>
+      </BorderPane>
+   </children>
+</StackPane>

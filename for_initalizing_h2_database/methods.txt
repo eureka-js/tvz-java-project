@@ -1,0 +1,19 @@
+This project uses files and the database simultaneously. If you want to use only the files, comment out all the
+database lines in this project and disregard these methods.
+
+You can place those methods inside the overridden start method in "MainApplication". Start the application,
+then exit the application. (Otherwise, you might forget to disable them.)
+Afterward, you can either comment out or delete those lines of code in the "MainApplication" file.
+
+
+This line of code is meant to be executed only once if the database is empty without any entity names:
+    LoadNamesToDatabase.updateFromFileToDB();
+
+This is used to add/create a user as an admin (not to change the role):
+    try {
+        Database.registerUser("user", LoginController.hashPassword("user1"), Enums.UserRole.ADMIN);
+        FileIO.registerUser("admin", LoginController.hashPassword("admin1"), UserRole.ADMIN);
+    }
+    catch (SQLException | IOException e) {
+
+    }

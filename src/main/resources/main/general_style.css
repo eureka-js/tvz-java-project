@@ -1,0 +1,209 @@
+* {
+    -fx-font-family: Consolas;
+}
+
+#TitleTextArea {
+    -fx-control-inner-background: #20262e;
+    -fx-text-box-border: transparent;
+}
+.text-area .content {
+    -fx-background-radius: 0;
+}
+.text-area {
+    -fx-background-color: transparent;
+}
+
+Text {
+    -fx-text-fill: gray;
+    -fx-fill: gray;
+}
+
+.label {
+    -fx-text-fill: silver;
+}
+
+.text-field {
+    -fx-text-fill: silver;
+    -fx-prompt-text-fill: gray;
+    -fx-background-color: #363f4d;
+}
+
+#baseStackPane .text-field {
+    -fx-background-color: transparent;
+}
+
+Button, ToggleButton, MenuButton, ChoiceBox {
+    -fx-background-color: #363f4d;
+    -fx-text-fill: silver;
+    -fx-border-width: 2 0 0 0;
+    -fx-border-color: #29202e;
+}
+
+Button:hover, MenuButton:hover {
+    -fx-background-color: #56647a;
+}
+
+Button:armed, MenuButton:armed {
+    -fx-background-color: #29202e;
+}
+
+.table-view .choice-box .context-menu {
+    -fx-pref-width: 80;
+}
+
+.context-menu {
+    -fx-border-width: 2 0 0 0;
+    -fx-border-color: #29202e;
+    -fx-pref-width: 128;
+    -fx-background-color: #363f4d;
+}
+.combo-box .list-cell {
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+}
+
+#regButton, #logInButton, #submitButton {
+    -fx-min-width: 70;
+}
+
+#exitButton, #closeButton, #yesButton, #noButton {
+    -fx-min-width: 50;
+}
+
+.table-view {
+    -fx-text-fill: silver;
+    -fx-fill: silver;
+    -fx-background-color: #20262e;
+}
+
+.table-view .table-cell {
+    -fx-background-color: #20262e;
+    -fx-text-fill: silver;
+    -fx-alignment: center;
+}
+
+.table-view .table-cell TextField {
+    -fx-alignment: center;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #29202e;
+}
+
+.table-view .filler {
+    -fx-background-color: #29202e;
+}
+
+.table-view .column-header {
+    -fx-background-color: #29202e;
+    -fx-text-fill: silver;
+}
+
+.table-view .corner {
+    -fx-background-color: #20262e;
+}
+
+.table-view .scroll-bar {
+    -fx-background-color: #20262e;
+}
+
+.table-view .scroll-bar .thumb {
+    -fx-background-color: #29202e;
+}
+
+.table-column {
+    -fx-border-width: 0;
+}
+
+.progress-bar .bar {
+    -fx-background-color: #706a02;
+    -fx-background-radius: 0;
+}
+.progress-bar .track {
+    -fx-background-color: #29202e;
+}
+
+
+
+.menu-item:focused {
+    -fx-background-color: #20262e;
+}
+
+.dialog-pane {
+    -fx-border-width: 4 0 0 0;
+    -fx-border-color: #29202e;
+    -fx-background-color: #20262e;
+}
+.dialog-pane .header-panel {
+    -fx-background-color: #20262e;
+}
+
+
+/* Start of Log In screen css */
+
+#loginVBox, #exitBorderPane, #registerVBox {
+    -fx-background-color: #20262e;
+}
+
+/* End of Log In screen css */
+/* Start of Main screen css */
+
+#stackPane, #mainGridPane, #combatVBox, #characterBorderPane, #guideBorderPane, #aboutBorderPane, #playerDeathVBox,
+#baseStackPane, #mainBorderPane, #AllEntityChViewBorderPane, #AdminPermissionBorderPane, #adminPermissionVBox,
+#usersControlBorderPane, #deleteVbox {
+    -fx-background-color: #20262e;
+}
+
+#depthHBox {
+    -fx-background-color: #29202e;
+}
+
+#gameBoardGridPane{
+    -fx-background-color: #363f4d;
+}
+#gameBoardGridPane Button {
+    -fx-border-width: 0;
+}
+
+#gameTextAreaVBox, #gameTextArea {
+    -fx-background-color: #363f4d;
+}
+#gameTextArea {
+    -fx-font-size: 14;
+    -fx-control-inner-background: #363f4d;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-text-box-border: transparent;
+}
+.text-area .viewport{
+    -fx-background-color: transparent;
+}
+.text-area .content{
+    -fx-background-color: transparent;
+}
+.text-area .corner {
+    -fx-background-color: #363f4d;
+}
+
+.text-area .scroll-bar {
+    -fx-background-color: #20262e;
+}
+
+.text-area .scroll-bar .thumb {
+    -fx-background-color: #29202e;
+}
+
+
+#filtPlInvItemsTextField {
+    -fx-background-color: #363f4d;
+}
+
+/* End of Main screen css */
+/* Start of Entity Control screen css */
+
+#plEnItBarHBox, #closeButtonHBox, #dataChangeBorderPane, #dataChangeBorderPane, #dataChangeVBox
+, #playerControlGridPane, #enemiesControlGridPane, #itemsControlBorderPane {
+    -fx-background-color: #20262e;
+}
+
+/* End of Entity Control screen css */

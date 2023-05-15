@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="stackPane" onKeyPressed="#onKeyPressed" prefHeight="720.0" prefWidth="1280.0" stylesheets="@general_style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.GameScreenController">
+   <children>
+      <BorderPane prefHeight="720.0" prefWidth="1280.0" StackPane.alignment="CENTER">
+         <center>
+            <GridPane fx:id="mainGridPane" maxHeight="680.0" maxWidth="980.0" minHeight="580.0" minWidth="884.0" prefHeight="620.0" prefWidth="880.0" BorderPane.alignment="CENTER">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="77.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="390.0" minWidth="10.0" prefWidth="335.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="153.0" minHeight="10.0" prefHeight="132.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="167.0" minHeight="10.0" prefHeight="86.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="302.0" minHeight="10.0" prefHeight="111.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="190.0" minHeight="0.0" prefHeight="96.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="167.0" minHeight="10.0" prefHeight="101.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="94.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <VBox alignment="CENTER" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="4" GridPane.rowSpan="2">
+                     <children>
+                        <Button fx:id="newGameButton" mnemonicParsing="false" onAction="#onNewGameButtonPress" prefHeight="27.0" prefWidth="110.0" text="New game">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="characterButton" mnemonicParsing="false" onAction="#onCharacterButtonPress" prefHeight="27.0" prefWidth="110.0" text="Character" textAlignment="CENTER">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="entContrButton" mnemonicParsing="false" onAction="#onEntityControlButtonPress" prefHeight="27.0" prefWidth="110.0" text="Entity Control" textAlignment="CENTER">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="guideButton" mnemonicParsing="false" onAction="#onGuideButtonPress" prefHeight="27.0" prefWidth="110.0" text="Guide" textAlignment="CENTER">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="aboutButton" mnemonicParsing="false" onAction="#onAboutButtonPress" prefHeight="27.0" prefWidth="110.0" text="About" textAlignment="CENTER">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="logOutButton" mnemonicParsing="false" onAction="#onLogOutButtonPress" prefHeight="27.0" prefWidth="110.0" text="Log out" textAlignment="CENTER" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="645.0" GridPane.columnSpan="4" GridPane.rowSpan="4">
+                     <children>
+                        <HBox fx:id="depthHBox" alignment="CENTER" maxWidth="400.0" prefHeight="24.0" prefWidth="400.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Depth: ">
+                                 <HBox.margin>
+                                    <Insets right="2.0" />
+                                 </HBox.margin></Text>
+                              <Label fx:id="depthLabel" text="Label" />
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <GridPane fx:id="gameBoardGridPane" alignment="CENTER" gridLinesVisible="true" maxHeight="360.0" maxWidth="360.0" minHeight="400.0" minWidth="400.0" prefHeight="400.0" prefWidth="400.0">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets bottom="20.0" />
+                     </padding>
+                  </VBox>
+                  <VBox fx:id="gameTextAreaVBox" alignment="CENTER" GridPane.columnSpan="5" GridPane.rowIndex="4" GridPane.rowSpan="2">
+                     <children>
+                        <TextArea fx:id="gameTextArea" editable="false" prefWidth="900.0">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextArea>
+                     </children>
+                  </VBox>
+                  <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.columnSpan="3" GridPane.rowSpan="4">
+                     <children>
+                        <BorderPane fx:id="aboutBorderPane" prefHeight="520.0" prefWidth="350.0">
+                           <center>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="This application was made by Jurica Stanić as a project for a subject named &quot;Java Programming&quot; from the &quot;Zagreb University of Applied Sciences&quot;." textAlignment="CENTER" wrappingWidth="250.390625" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="There were tasks I had to do/tick, hence the application oozes with a bit of oddness." textAlignment="CENTER" wrappingWidth="250.390625">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </center>
+                           <bottom>
+                              <Button fx:id="aboutCloseButton" minWidth="50.0" mnemonicParsing="false" onAction="#onCloseButtonPress" text="Close" BorderPane.alignment="CENTER">
+                                 <BorderPane.margin>
+                                    <Insets bottom="5.0" top="10.0" />
+                                 </BorderPane.margin>
+                              </Button>
+                           </bottom>
+                        </BorderPane>
+                        <VBox fx:id="playerDeathVBox" alignment="CENTER">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="You have died" />
+                              <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="newDeathGameButton" mnemonicParsing="false" onAction="#onDeathNewGameButtonPress" prefHeight="25.0" prefWidth="80.0" text="New game">
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="deathLogOutButton" mnemonicParsing="false" onAction="#onLogOutButtonPress" prefHeight="25.0" prefWidth="80.0" text="Log out" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <BorderPane fx:id="guideBorderPane" prefHeight="520.0" prefWidth="350.0">
+                           <bottom>
+                              <Button fx:id="guideCloseButton" minWidth="50.0" mnemonicParsing="false" onAction="#onCloseButtonPress" text="Close" BorderPane.alignment="CENTER">
+                                 <BorderPane.margin>
+                                    <Insets bottom="5.0" top="10.0" />
+                                 </BorderPane.margin>
+                              </Button>
+                           </bottom>
+                           <center>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Controls: w(up) a(left) s(down) d(right) s(wait)" textAlignment="CENTER" wrappingWidth="83.69921875">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trader trades player's kills for his own items, if the player doesn't have enough kills, trader will supplement the remaining of player's kills for the player's life points. He comes every 5th depth level." textAlignment="CENTER" wrappingWidth="300.2578125">
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="At depth &quot;0&quot;, the trader will give the player a free item without claiming his life points." textAlignment="CENTER" wrappingWidth="300.390625">
+                                       <VBox.margin>
+                                          <Insets top="2.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trader's inventory is not always as 'plentiful' as the player might expect. The same comes for a chest that sits at every depth level!" textAlignment="CENTER" wrappingWidth="300.390625">
+                                       <VBox.margin>
+                                          <Insets top="2.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </center>
+                        </BorderPane>
+                        <BorderPane fx:id="characterBorderPane" prefHeight="520.0" prefWidth="350.0">
+                           <bottom>
+                              <Button fx:id="characterCloseButton" mnemonicParsing="false" onAction="#onCloseButtonPress" prefHeight="25.0" prefWidth="50.0" text="Close" BorderPane.alignment="CENTER">
+                                 <BorderPane.margin>
+                                    <Insets bottom="5.0" top="10.0" />
+                                 </BorderPane.margin>
+                              </Button>
+                           </bottom>
+                           <right>
+                              <VBox prefHeight="365.0" prefWidth="340.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="410.0" prefWidth="340.0">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="30.0" prefWidth="311.0">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Filter by name: ">
+                                                   <HBox.margin>
+                                                      <Insets right="2.0" />
+                                                   </HBox.margin></Text>
+                                                <TextField fx:id="filtPlInvItemsTextField" onAction="#filterPlayerInvItems" prefHeight="7.0" prefWidth="107.0" />
+                                             </children>
+                                          </HBox>
+                                          <TableView fx:id="playerInvItemsTableView" editable="true" prefHeight="350.0" prefWidth="340.0">
+                                             <columns>
+                                                <TableColumn fx:id="playerInvItemNameTableColumn" minWidth="20.0" prefWidth="31.0" text="Name" />
+                                                <TableColumn fx:id="playerInvItemTypeTableColumn" minWidth="20.0" prefWidth="61.0" text="Type" />
+                                                <TableColumn fx:id="playerInvItemDefAttTableColumn" minWidth="20.0" prefWidth="51.0" text="Def/Att" />
+                                                <TableColumn fx:id="playerInvItemWeightTableColumn" minWidth="20.0" prefWidth="50.0" text="Weight" />
+                                                <TableColumn fx:id="playerInvItemLevelTableColumn" minWidth="20.0" prefWidth="38.0" text="Level" />
+                                                <TableColumn fx:id="playerInvEquipButtonTableColumn" minWidth="20.0" prefWidth="108.0" />
+                                                <TableColumn minWidth="340.0" prefWidth="75.0" />
+                                             </columns>
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                          </TableView>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets top="5.0" />
+                                 </padding>
+                              </VBox>
+                           </right>
+                           <left>
+                              <VBox alignment="CENTER" prefHeight="380.0" prefWidth="165.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label fx:id="playerNameLabel" text="Label">
+                                       <padding>
+                                          <Insets bottom="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="89.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Level: " textAlignment="RIGHT" wrappingWidth="80.0">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <Label fx:id="playerLevelLabel" alignment="CENTER" text="Label" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Base Health: " textAlignment="RIGHT" wrappingWidth="80.0">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <Label fx:id="playerBaseHealthLabel" prefWidth="50.0" text="Label" textAlignment="CENTER" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Health: " textAlignment="RIGHT" wrappingWidth="80.0">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <Label fx:id="playerHealthLabel" prefWidth="50.0" text="Label" textAlignment="CENTER" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Stamina: " textAlignment="RIGHT" wrappingWidth="80.0">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <Label fx:id="playerStaminaLabel" prefWidth="50.0" text="Label" textAlignment="CENTER" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Weight: " textAlignment="RIGHT" wrappingWidth="80.0">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <Label fx:id="playerWeightLabel" prefWidth="50.0" text="Label" textAlignment="CENTER" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Armour: " textAlignment="RIGHT" wrappingWidth="80.0">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <Label fx:id="playerArmourLabel" prefWidth="50.0" text="Label" textAlignment="CENTER" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attack Speed: " textAlignment="RIGHT" wrappingWidth="80.0">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <Label fx:id="playerAttSpeedLabel" prefHeight="17.0" prefWidth="50.0" text="Label" textAlignment="CENTER" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="76.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Base Attack Damage: " textAlignment="RIGHT" wrappingWidth="80.0">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <Label fx:id="playerBaseAttDmgLabel" prefHeight="17.0" prefWidth="50.0" text="Label" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Median Attack Damage: " textAlignment="RIGHT" wrappingWidth="80.0">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <Label fx:id="playerMedAttDmgLabel" prefWidth="50.0" text="Label" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Accuracy: " textAlignment="RIGHT" wrappingWidth="80.0">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <Label fx:id="playerAccuracyLabel" prefWidth="50.0" text="Label" textAlignment="CENTER" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Initiative: " textAlignment="RIGHT" wrappingWidth="80.0">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <Label fx:id="playerInitiativeLabel" prefWidth="50.0" text="Label" textAlignment="CENTER" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Symbol: " textAlignment="RIGHT" wrappingWidth="80.0">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <Label fx:id="playerSymoblLabel" prefWidth="50.0" text="Label" textAlignment="CENTER" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sex: " textAlignment="RIGHT" wrappingWidth="80.0">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <Label fx:id="playerSexLabel" prefWidth="50.0" text="Label" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Type: " textAlignment="RIGHT" wrappingWidth="80.0">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <Label fx:id="playerTypeLabel" prefWidth="50.0" text="Label" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </left>
+                        </BorderPane>
+                        <VBox fx:id="combatVBox" alignment="CENTER" prefHeight="389.0" prefWidth="505.0">
+                           <children>
+                              <Button fx:id="combSkipButton" mnemonicParsing="false" onAction="#onCombSkipButtonPress" text="Skip" />
+                              <GridPane alignment="CENTER" prefHeight="200.0" prefWidth="488.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="93.0" minWidth="0.0" prefWidth="0.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="10.0" prefWidth="193.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="5">
+                                       <left>
+                                          <Label fx:id="playerComScreenNameLabel" prefHeight="17.0" prefWidth="100.0" text="-" textAlignment="CENTER" BorderPane.alignment="CENTER" />
+                                       </left>
+                                       <right>
+                                          <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                             <left>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="104.0" BorderPane.alignment="CENTER">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Level: ">
+                                                         <HBox.margin>
+                                                            <Insets right="2.0" />
+                                                         </HBox.margin></Text>
+                                                      <Label fx:id="playerComScreenLevelLabel" prefHeight="17.0" prefWidth="30.0" text="-" />
+                                                   </children>
+                                                </HBox>
+                                             </left>
+                                             <right>
+                                                <HBox alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="95.0" BorderPane.alignment="CENTER">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kills: ">
+                                                         <HBox.margin>
+                                                            <Insets right="2.0" />
+                                                         </HBox.margin></Text>
+                                                      <Label fx:id="playerKillCountLabel" prefHeight="17.0" prefWidth="30.0" text="-" />
+                                                   </children>
+                                                </HBox>
+                                             </right>
+                                          </BorderPane>
+                                       </right>
+                                    </BorderPane>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="1">
+                                       <center>
+                                          <ProgressBar fx:id="playerTurnProgressBar" prefHeight="18.0" prefWidth="140.0" progress="1.0" BorderPane.alignment="CENTER" />
+                                       </center>
+                                    </BorderPane>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.rowSpan="4">
+                                       <center>
+                                          <TableView fx:id="playerEquippedItemsTableView" editable="true" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                            <columns>
+                                              <TableColumn fx:id="playerEquippedItemNameTableColumn" minWidth="20.0" prefWidth="75.0" text="Type" />
+                                                <TableColumn fx:id="playerEquippedItemDefAttTableColumn" minWidth="20.0" prefWidth="93.0" text="Def/Att" />
+                                                <TableColumn fx:id="playerEquippedItemWeightTableColumn" minWidth="20.0" prefWidth="50.0" text="Weight" />
+                                                <TableColumn fx:id="playerEquippedItemLevelTableColumn" minWidth="20.0" prefWidth="76.0" text="Level" />
+                                                <TableColumn minWidth="167.0" prefWidth="167.0" />
+                                            </columns>
+                                             <BorderPane.margin>
+                                                <Insets top="10.0" />
+                                             </BorderPane.margin>
+                                          </TableView>
+                                       </center>
+                                    </BorderPane>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="2" GridPane.rowSpan="3">
+                                       <left>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="181.0" BorderPane.alignment="CENTER_LEFT">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Health: " textAlignment="RIGHT" wrappingWidth="93.0">
+                                                         <HBox.margin>
+                                                            <Insets right="2.0" />
+                                                         </HBox.margin></Text>
+                                                      <Label fx:id="playerComScreenHealthLabel" prefHeight="17.0" prefWidth="50.0" text="-" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Stamina: " textAlignment="RIGHT" wrappingWidth="93.0">
+                                                         <HBox.margin>
+                                                            <Insets right="2.0" />
+                                                         </HBox.margin></Text>
+                                                      <Label fx:id="playerComScreenStamLabel" prefHeight="17.0" prefWidth="50.0" text="-" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Median Attack Damage: " textAlignment="RIGHT" wrappingWidth="93.0">
+                                                         <HBox.margin>
+                                                            <Insets right="2.0" />
+                                                         </HBox.margin></Text>
+                                                      <Label fx:id="playerComScreenMedAttDmgLabel" prefHeight="17.0" prefWidth="50.0" text="-" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attack Speed: " textAlignment="RIGHT" wrappingWidth="93.0">
+                                                         <HBox.margin>
+                                                            <Insets right="2.0" />
+                                                         </HBox.margin></Text>
+                                                      <Label fx:id="playerComScreenAttSpeedLabel" prefHeight="17.0" prefWidth="50.0" text="-" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <BorderPane.margin>
+                                                <Insets top="10.0" />
+                                             </BorderPane.margin>
+                                          </VBox>
+                                       </left>
+                                    </BorderPane>
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </GridPane>
+                              <GridPane fx:id="enemyCombatGridPane" alignment="CENTER" prefHeight="200.0" prefWidth="488.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="93.0" minWidth="0.0" prefWidth="0.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="196.0" minWidth="10.0" prefWidth="193.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="5">
+                                       <right>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Level: ">
+                                                   <HBox.margin>
+                                                      <Insets right="2.0" />
+                                                   </HBox.margin></Text>
+                                                <Label fx:id="enemyComScreenLevelLabel" prefHeight="17.0" prefWidth="30.0" text="-" />
+                                             </children>
+                                          </HBox>
+                                       </right>
+                                       <left>
+                                          <Label fx:id="enemyComScreenNameLabel" text="-" textAlignment="CENTER" BorderPane.alignment="CENTER" />
+                                       </left>
+                                    </BorderPane>
+                                    <BorderPane prefHeight="29.0" prefWidth="177.0" GridPane.columnSpan="3" GridPane.rowIndex="1">
+                                       <center>
+                                          <ProgressBar fx:id="enemyTurnProgressBar" prefHeight="18.0" prefWidth="140.0" progress="1.0" BorderPane.alignment="CENTER" />
+                                       </center>
+                                    </BorderPane>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="2" GridPane.rowSpan="3">
+                                       <left>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER_LEFT">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Health: " textAlignment="RIGHT" wrappingWidth="93.0">
+                                                         <HBox.margin>
+                                                            <Insets right="2.0" />
+                                                         </HBox.margin></Text>
+                                                      <Label fx:id="enemyComScreenHealthLabel" prefHeight="17.0" prefWidth="50.0" text="-" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Stamina: " textAlignment="RIGHT" wrappingWidth="93.0">
+                                                         <HBox.margin>
+                                                            <Insets right="2.0" />
+                                                         </HBox.margin></Text>
+                                                      <Label fx:id="enemyComScreenStamLabel" prefHeight="17.0" prefWidth="50.0" text="-" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Median Attack Damage: " textAlignment="RIGHT" wrappingWidth="93.0">
+                                                         <HBox.margin>
+                                                            <Insets right="2.0" />
+                                                         </HBox.margin></Text>
+                                                      <Label fx:id="enemyComScreenMedAttDmgLabel" prefHeight="17.0" prefWidth="50.0" text="-" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attack Speed: " textAlignment="RIGHT" wrappingWidth="93.0">
+                                                         <HBox.margin>
+                                                            <Insets right="2.0" />
+                                                         </HBox.margin></Text>
+                                                      <Label fx:id="enemyComScreenAttSpeedLabel" prefHeight="17.0" prefWidth="50.0" text="-" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <BorderPane.margin>
+                                                <Insets top="10.0" />
+                                             </BorderPane.margin>
+                                          </VBox>
+                                       </left>
+                                    </BorderPane>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.rowSpan="4">
+                                       <center>
+                                          <TableView fx:id="enemyEquippedItemsTableView" editable="true" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                            <columns>
+                                              <TableColumn fx:id="enemyEquippedItemNameTableColumn" minWidth="20.0" prefWidth="75.0" text="Type" />
+                                                <TableColumn fx:id="enemyEquippedItemDefAttTableColumn" minWidth="20.0" prefWidth="93.0" text="Def/Att" />
+                                                <TableColumn fx:id="enemyEquippedItemWeightTableColumn" minWidth="20.0" prefWidth="50.0" text="Weight" />
+                                                <TableColumn fx:id="enemyEquippedItemLevelTableColumn" minWidth="20.0" prefWidth="76.0" text="Level" />
+                                                <TableColumn minWidth="200.0" prefWidth="75.0" />
+                                            </columns>
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                             <BorderPane.margin>
+                                                <Insets top="10.0" />
+                                             </BorderPane.margin>
+                                          </TableView>
+                                       </center>
+                                    </BorderPane>
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </GridPane>
+                           </children>
+                        </VBox>
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" />
+                     </padding>
+                  </StackPane>
+               </children>
+            </GridPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

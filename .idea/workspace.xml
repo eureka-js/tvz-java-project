@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b738c4a9-daf4-4bd0-9042-f46d6b1e1789" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/for_initalizing_h2_database/methods.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/For initializing(creating) h2 database/SQL script for creating the database.txt" beforeDir="false" afterPath="$PROJECT_DIR$/for_initalizing_h2_database/sql_script_for_the_database.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/For initializing(creating) h2 database/methods.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDoList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ToDoList.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/beings/HumanNPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/beings/HumanNPC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/checked/PlayerIsAlexanderRadovanException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/EntityControlController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/EntityControlController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/GameScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/GameScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/FileIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/FileIO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/database/LoadNamesToDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/database/LoadNamesToDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/thread/GameEngineThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/thread/GameEngineThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/main/game-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/main/game-view.fxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2LUK2wGma8ZsXNLi8LVY0FjuOZO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Projects/tvz-java-project/pom.xml&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Projects\jurica_stanic_java_project\src\main\resources" />
+      <recent name="E:\Projects\jurica_stanic_java_project\src\main" />
+      <recent name="E:\Projects\jurica_stanic_java_project" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b738c4a9-daf4-4bd0-9042-f46d6b1e1789" name="Changes" comment="" />
+      <created>1675920021218</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1675920021218</updated>
+      <workItem from="1675920023595" duration="135000" />
+      <workItem from="1675920274247" duration="196000" />
+      <workItem from="1675920486271" duration="44000" />
+      <workItem from="1675929414499" duration="3417000" />
+      <workItem from="1675952652441" duration="3882000" />
+      <workItem from="1675963207640" duration="1134000" />
+      <workItem from="1675966128833" duration="4901000" />
+      <workItem from="1675990990359" duration="275000" />
+      <workItem from="1675991802371" duration="33000" />
+      <workItem from="1675991931017" duration="1172000" />
+      <workItem from="1676122203037" duration="417000" />
+      <workItem from="1676304826234" duration="11107000" />
+      <workItem from="1676819234168" duration="3328000" />
+      <workItem from="1676824135741" duration="16348000" />
+      <workItem from="1676865319906" duration="3000" />
+      <workItem from="1676912462013" duration="3025000" />
+      <workItem from="1676969755607" duration="4000" />
+      <workItem from="1677233891504" duration="7862000" />
+      <workItem from="1677250035872" duration="884000" />
+      <workItem from="1677672863806" duration="5122000" />
+      <workItem from="1677693044713" duration="1019000" />
+      <workItem from="1679512703683" duration="44000" />
+      <workItem from="1680274089337" duration="1301000" />
+      <workItem from="1680277073895" duration="59000" />
+      <workItem from="1681478724374" duration="1065000" />
+      <workItem from="1683580876974" duration="64000" />
+      <workItem from="1684022921604" duration="169000" />
+      <workItem from="1684072203780" duration="1379000" />
+      <workItem from="1684162277128" duration="2959000" />
+      <workItem from="1684165254913" duration="4694000" />
+      <workItem from="1684170038915" duration="206000" />
+      <workItem from="1684170493540" duration="314000" />
+      <workItem from="1684171244277" duration="116000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/util/FileIO.java</url>
+          <line>201</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="trader" language="JAVA" />
+        <watch expression="((HashMap)trader.inventory).entrySet().toArray()[0]" custom="java.util.HashMap" />
+        <watch expression="ntityListTableView.getSelectionModel().getSelectedItem()" />
+        <watch expression="entityListTableView.getSelectionModel().getSelectedItem()" />
+        <watch expression="enemyListTableView.getSelectionModel().getSelectedItem()" />
+        <watch expression="enemyListTableView.getSelectionModel()" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

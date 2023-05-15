@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="baseStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@general_style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.EntityControlController">
+   <children>
+      <BorderPane maxHeight="620.0" maxWidth="980.0" minHeight="580.0" minWidth="884.0" prefHeight="156.0" prefWidth="1280.0">
+         <top>
+            <HBox fx:id="plEnItBarHBox" alignment="CENTER" prefHeight="39.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ToggleButton fx:id="itemsToggleButton" mnemonicParsing="false" onAction="#onItemsButtonPress" text="Items">
+                     <HBox.margin>
+                        <Insets right="1.0" />
+                     </HBox.margin></ToggleButton>
+                  <ToggleButton fx:id="playerToggleButton" mnemonicParsing="false" onAction="#onPlayerButtonPress" text="Player">
+                     <HBox.margin>
+                        <Insets right="1.0" />
+                     </HBox.margin>
+                  </ToggleButton>
+                  <ToggleButton fx:id="enemiesToggleButton" mnemonicParsing="false" onAction="#onEnemiesButtonPress" text="Enemies">
+                     <HBox.margin>
+                        <Insets right="1.0" />
+                     </HBox.margin></ToggleButton>
+                  <ToggleButton fx:id="usersToggleButton" mnemonicParsing="false" onAction="#onUsersButtonPress" text="Users" />
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <BorderPane fx:id="usersControlBorderPane">
+                     <center>
+                        <TableView fx:id="userListTableView" maxWidth="350.0" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn fx:id="usernameTableColumn" prefWidth="144.0" text="User" />
+                            <TableColumn fx:id="userRoleTableColumn" minWidth="0.0" prefWidth="106.0" text="Role" />
+                              <TableColumn fx:id="userDeleteTableColumn" prefWidth="123.0" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </center>
+                  </BorderPane>
+                  <BorderPane fx:id="itemsControlBorderPane" prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <VBox fillWidth="false" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <BorderPane prefHeight="40.0" prefWidth="680.0">
+                                 <left>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <MenuButton mnemonicParsing="false" text="Filter by">
+                                            <items>
+                                              <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <TextField fx:id="itemFilterByAllTextField" alignment="CENTER" minWidth="80.0" onAction="#onItemFilterByAllTextField" promptText="All" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <TextField fx:id="itemFilterByOwnerTextField" alignment="CENTER" minWidth="80.0" onAction="#onItemFilterByOwnerTextField" promptText="Owner" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <TextField fx:id="itemFilterByNameTextField" alignment="CENTER" minWidth="80.0" onAction="#onItemFilterByNameTextField" promptText="Name" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <TextField fx:id="itemFilterByTypeTextField" alignment="CENTER" minWidth="80.0" onAction="#onItemFilterByTypeTextField" promptText="Type" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <TextField fx:id="itemFilterByDefDmgTextField" alignment="CENTER" minWidth="80.0" onAction="#onItemFilterByDefDmgTextField" promptText="Def/Dmg" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <TextField fx:id="itemFilterByWeightTextField" alignment="CENTER" minWidth="80.0" onAction="#onItemFilterByWeightTextField" promptText="Weight" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <TextField fx:id="itemFilterBySymbolTextField" alignment="CENTER" minWidth="80.0" onAction="#onItemFilterBySymbolTextField" promptText="Symbol" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <TextField fx:id="itemFilterByCoordTextField" alignment="CENTER" minWidth="80.0" onAction="#onItemFilterByCoordTextField" promptText="Coord (x, y)" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <TextField fx:id="itemFilterByLevelTextField" alignment="CENTER" minWidth="80.0" onAction="#onItemFilterByLevelTextField" promptText="Level" />
+                                                   </graphic>
+                                                </MenuItem>
+                                            </items>
+                                          </MenuButton>
+                                          <MenuButton mnemonicParsing="false" text="Search">
+                                            <items>
+                                              <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <TextField fx:id="itemSearchOwnerTextField" alignment="CENTER" minWidth="80.0" onAction="#onItemSearchOwnerTextField" promptText="Owner" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <TextField fx:id="itemSearchNameTextField" alignment="CENTER" minWidth="80.0" onAction="#onItemSearchNameTextField" promptText="Name" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <TextField fx:id="itemSearchTypeTextField" alignment="CENTER" minWidth="80.0" onAction="#onItemSearchTypeTextField" promptText="Type" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <TextField fx:id="itemSearchDefDmgTextField" alignment="CENTER" minWidth="80.0" onAction="#onItemSearchDefDmgTextField" promptText="Def/Dmg" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <TextField fx:id="itemSearchWeightTextField" alignment="CENTER" minWidth="80.0" onAction="#onItemSearchWeightTextField" promptText="Weight" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <TextField fx:id="itemSearchSymbolTextField" alignment="CENTER" minWidth="80.0" onAction="#onItemSearchSymbolTextField" promptText="Symbol" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <TextField fx:id="itemSearchCoordTextField" alignment="CENTER" minWidth="80.0" onAction="#onItemSearchCoordTextField" promptText="Coord (x, y)" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <TextField fx:id="itemSearchLevelTextField" alignment="CENTER" minWidth="80.0" onAction="#onItemSearchLevelTextField" promptText="Level" />
+                                                   </graphic>
+                                                </MenuItem>
+                                            </items>
+                                          </MenuButton>
+                                       </children>
+                                    </HBox>
+                                 </left>
+                                 <right>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button fx:id="itemListRefreshButton" minWidth="80.0" mnemonicParsing="false" onAction="#onItemListRefreshButton" text="Refresh" />
+                                          <MenuButton fx:id="itemCreateMenuButton" mnemonicParsing="false" text="Create">
+                                             <items>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <Button fx:id="createHeadwareButton" alignment="CENTER" minWidth="80.0" mnemonicParsing="false" onAction="#createTypeItem" prefWidth="80.0" text="Headware" textAlignment="CENTER" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <Button fx:id="createTrunkwareButton" alignment="CENTER" minWidth="80.0" mnemonicParsing="false" onAction="#createTypeItem" prefWidth="80.0" text="Trunkware" textAlignment="CENTER" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <Button fx:id="createArmwareButton" alignment="CENTER" minWidth="80.0" mnemonicParsing="false" onAction="#createTypeItem" prefWidth="80.0" text="Armware" textAlignment="CENTER" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <Button fx:id="createLegwareButton" alignment="CENTER" minWidth="80.0" mnemonicParsing="false" onAction="#createTypeItem" prefWidth="80.0" text="Legware" textAlignment="CENTER" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <Button fx:id="createShieldButton" alignment="CENTER" minWidth="80.0" mnemonicParsing="false" onAction="#createTypeItem" prefWidth="80.0" text="Shield" textAlignment="CENTER" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <Button fx:id="createWeaponButton" alignment="CENTER" minWidth="80.0" mnemonicParsing="false" onAction="#createTypeItem" prefWidth="80.0" text="Weapon" textAlignment="CENTER" />
+                                                   </graphic>
+                                                </MenuItem>
+                                             </items>
+                                          </MenuButton>
+                                       </children>
+                                    </HBox>
+                                 </right>
+                              </BorderPane>
+                              <TableView fx:id="itemListTableView" prefHeight="504.0" prefWidth="680.0">
+                                <columns>
+                                  <TableColumn fx:id="itemListItemNameTableColumn" minWidth="20.0" prefWidth="157.0" text="Name" />
+                                  <TableColumn fx:id="itemListItemTypeTableColumn" minWidth="20.0" prefWidth="73.0" text="Type" />
+                                    <TableColumn fx:id="itemListItemDefAttTableColumn" minWidth="20.0" prefWidth="56.0" text="Def/Dmg" />
+                                    <TableColumn fx:id="itemListItemWeightTableColumn" minWidth="20.0" prefWidth="64.0" text="Weight" />
+                                    <TableColumn fx:id="itemListItemSymbolTableColumn" minWidth="20.0" prefWidth="46.0" text="Symbol" />
+                                    <TableColumn fx:id="itemListCoordTableColumn" minWidth="30.0" prefWidth="73.0" text="Coord" />
+                                    <TableColumn fx:id="itemListItemLevelTableColumn" minWidth="20.0" prefWidth="41.0" text="Level" />
+                                    <TableColumn fx:id="itemListOwnerNameTableColumn" minWidth="20.0" prefWidth="73.0" text="Owner" />
+                                    <TableColumn fx:id="itemListDeleteButtonTableColumn" minWidth="20.0" prefWidth="96.0" />
+                                    <TableColumn minWidth="680.0" prefWidth="75.0" />
+                                </columns>
+                              </TableView>
+                           </children>
+                           <padding>
+                              <Insets left="150.0" right="150.0" />
+                           </padding>
+                        </VBox>
+                     </center>
+                  </BorderPane>
+                  <GridPane fx:id="playerControlGridPane" StackPane.alignment="CENTER">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <VBox alignment="CENTER_RIGHT" prefHeight="496.0" prefWidth="378.0" GridPane.rowSpan="2">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name: " textAlignment="RIGHT" wrappingWidth="130.13671875">
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin></Text>
+                                    <TextField fx:id="playerNameTextField" onAction="#onPlayerNameTextField" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: transparent;" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Level: " textAlignment="RIGHT" wrappingWidth="130.13671875">
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin></Text>
+                                    <TextField fx:id="playerLevelTextField" onAction="#onPlayerLevelTextField" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: transparent;" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Base health: " textAlignment="RIGHT" wrappingWidth="130.13671875">
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin></Text>
+                                    <TextField fx:id="playerBaseHealthTextField" onAction="#onPlayerBaseHealthTextField" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: transparent;" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Health: " textAlignment="RIGHT" wrappingWidth="130.13671875">
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin></Text>
+                                    <TextField fx:id="playerHealthTextField" onAction="#onPlayerHealthTextField" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: transparent;" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Stamina: " textAlignment="RIGHT" wrappingWidth="130.13671875">
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin></Text>
+                                    <TextField fx:id="playerStaminaTextField" onAction="#onPlayerStaminaTextField" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: transparent;" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Weight: " textAlignment="RIGHT" wrappingWidth="130.13671875">
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin></Text>
+                                    <TextField fx:id="playerWeightTextField" onAction="#onPlayerWeightTextField" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: transparent;" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Armour: " textAlignment="RIGHT" wrappingWidth="130.13671875">
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin></Text>
+                                    <TextField fx:id="playerArmourTextField" onAction="#onPlayerArmourTextField" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: transparent;" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attack speed: " textAlignment="RIGHT" wrappingWidth="130.13671875">
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin></Text>
+                                    <TextField fx:id="playerAttSpeedTextField" onAction="#onPlayerAttSpeedTextField" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: transparent;" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Base attack damage: " textAlignment="RIGHT" wrappingWidth="130.13671875">
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin></Text>
+                                    <TextField fx:id="playerBaseAttDmgTextField" onAction="#onPlayerBaseAttDmgTextField" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: transparent;" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Median attack damage: " textAlignment="RIGHT" wrappingWidth="130.13671875">
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin></Text>
+                                    <TextField fx:id="playerMedAttDmgTextField" onAction="#onPlayerMedAttDmgTextField" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: transparent;" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="accuracy: " textAlignment="RIGHT" wrappingWidth="130.13671875">
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin></Text>
+                                    <TextField fx:id="playerAccuracyTextField" onAction="#onPlayerAccuracyTextField" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: transparent;" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Initiative: " textAlignment="RIGHT" wrappingWidth="130.13671875">
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin></Text>
+                                    <TextField fx:id="playerInitiativeTextField" onAction="#onPlayerInitiativeTextField" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: transparent;" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sex: " textAlignment="RIGHT" wrappingWidth="130.13671875">
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin></Text>
+                                    <TextField fx:id="playerSexTextField" onAction="#onPlayerSexTextField" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: transparent;" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Type: " textAlignment="RIGHT" wrappingWidth="130.13671875">
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin></Text>
+                                    <TextField fx:id="playerTypeTextField" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: transparent;" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Symbol: " textAlignment="RIGHT" wrappingWidth="130.13671875">
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin></Text>
+                                    <TextField fx:id="playerSymoblTextField" onAction="#onPlayerSymbolTextField" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: transparent;" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Coordinates: " textAlignment="RIGHT" wrappingWidth="130.85546875">
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin></Text>
+                                    <TextField fx:id="playerCoordTextField" onAction="#onPlayerCoordTextField" prefWidth="130.0" style="-fx-background-color: transparent;" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kill count: " textAlignment="RIGHT" wrappingWidth="130.13671875">
+                                       <HBox.margin>
+                                          <Insets right="2.0" />
+                                       </HBox.margin></Text>
+                                    <TextField fx:id="playerKillCountTextField" onAction="#onPlayerKillCountTextField" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: transparent;" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <TableView fx:id="playerInvItemsTableView" prefHeight="496.0" prefWidth="525.0" GridPane.columnIndex="1" GridPane.rowSpan="2">
+                          <columns>
+                              <TableColumn fx:id="playerInvItemNameTableColumn" minWidth="20.0" prefWidth="162.0" text="Name" />
+                            <TableColumn fx:id="playerInvItemTypeTableColumn" minWidth="20.0" prefWidth="68.0" text="Type" />
+                            <TableColumn fx:id="playerInvItemDefAttTableColumn" minWidth="20.0" prefWidth="61.0" text="Def/Dmg" />
+                              <TableColumn fx:id="playerInvItemWeightTableColumn" minWidth="20.0" prefWidth="61.0" text="Weight" />
+                              <TableColumn fx:id="playerInvItemLevelTableColumn" minWidth="20.0" prefWidth="38.0" text="Level" />
+                              <TableColumn fx:id="playerInvEquipButtonTableColumn" minWidth="20.0" prefWidth="99.0" />
+                              <TableColumn minWidth="525.0" prefWidth="75.0" />
+                          </columns>
+                        </TableView>
+                     </children>
+                     <StackPane.margin>
+                        <Insets />
+                     </StackPane.margin>
+                  </GridPane>
+                  <GridPane fx:id="enemiesControlGridPane" alignment="CENTER" StackPane.alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="366.0" minWidth="10.0" prefWidth="162.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="0.0" prefWidth="209.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="366.0" minWidth="0.0" prefWidth="260.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="453.0" minWidth="0.0" prefWidth="178.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="453.0" minWidth="0.0" prefWidth="183.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="177.0" minHeight="10.0" prefHeight="111.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="163.0" minHeight="6.0" prefHeight="94.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="208.0" minHeight="10.0" prefHeight="105.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="154.0" minHeight="10.0" prefHeight="84.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <StackPane.margin>
+                        <Insets />
+                     </StackPane.margin>
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="496.0" prefWidth="333.0" GridPane.columnSpan="2" GridPane.rowSpan="4">
+                           <children>
+                              <BorderPane prefHeight="21.0" prefWidth="420.0">
+                                 <left>
+                                    <HBox prefHeight="24.0" prefWidth="170.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <MenuButton mnemonicParsing="false" text="Filter by">
+                                            <items>
+                                              <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <TextField fx:id="enemyFilterByAllTextField" alignment="CENTER" onAction="#onEnemyFilterByAllTextField" promptText="All" />
+                                                   </graphic>
+                                                </MenuItem>
+                                              <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <TextField fx:id="enemyFilterByNameTextField" alignment="CENTER" onAction="#onEnemyFilterByNameTextField" promptText="Name" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <TextField fx:id="enemyFilterByTypeTextField" alignment="CENTER" onAction="#onEnemyFilterByTypeTextField" promptText="Type" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <TextField fx:id="enemyFilterBySexTextField" alignment="CENTER" onAction="#onEnemyFilterBySexTextField" promptText="Sex" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <TextField fx:id="enemyFilterByLevelTextField" alignment="CENTER" onAction="#onEnemyFilterByLevelTextField" promptText="Level" />
+                                                   </graphic>
+                                                </MenuItem>
+                                            </items>
+                                          </MenuButton>
+                                          <MenuButton mnemonicParsing="false" text="Search">
+                                            <items>
+                                              <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <TextField fx:id="enemySearchNameTextField" alignment="CENTER" onAction="#onEnemySearchNameTextField" promptText="Name" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <TextField fx:id="enemySearchTypeTextField" alignment="CENTER" onAction="#onEnemySearchTypeTextField" promptText="Type" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <TextField fx:id="enemySearchSexTextField" alignment="CENTER" onAction="#onEnemySearchSexTextField" promptText="Sex" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <TextField fx:id="enemySearchLevelTextField" alignment="CENTER" onAction="#onEnemySearchLevelTextField" promptText="Level" />
+                                                   </graphic>
+                                                </MenuItem>
+                                            </items>
+                                          </MenuButton>
+                                       </children>
+                                    </HBox>
+                                 </left>
+                                 <right>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="168.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button fx:id="enemyListRefreshButton" minWidth="80.0" mnemonicParsing="false" onAction="#onEnemyListRefreshButton" text="Refresh" />
+                                          <MenuButton mnemonicParsing="false" text="Create">
+                                            <items>
+                                              <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <Button fx:id="createHumanButton" alignment="CENTER" minWidth="80.0" mnemonicParsing="false" onAction="#createTypeEnemy" prefWidth="80.0" text="Human" textAlignment="CENTER" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <Button fx:id="createHoundButton" alignment="CENTER" minWidth="80.0" mnemonicParsing="false" onAction="#createTypeEnemy" prefWidth="80.0" text="Hound" textAlignment="CENTER" />
+                                                   </graphic>
+                                                </MenuItem>
+                                                <MenuItem mnemonicParsing="false">
+                                                   <graphic>
+                                                      <Button fx:id="createRatButton" alignment="CENTER" minWidth="80.0" mnemonicParsing="false" onAction="#createTypeEnemy" prefWidth="80.0" text="Rat" textAlignment="CENTER" />
+                                                   </graphic>
+                                                </MenuItem>
+                                            </items>
+                                          </MenuButton>
+                                       </children>
+                                    </HBox>
+                                 </right>
+                              </BorderPane>
+                              <TableView fx:id="enemyListTableView" focusTraversable="false" onMouseClicked="#onEnemyListTableViewMouseClick" prefHeight="470.0" prefWidth="339.0" scaleShape="false">
+                                <columns>
+                                  <TableColumn fx:id="enemyNameTableColumn" minWidth="20.0" prefWidth="84.0" text="Name" />
+                                  <TableColumn fx:id="enemyTypeTableColumn" minWidth="20.0" prefWidth="61.0" text="Type" />
+                                    <TableColumn fx:id="enemySexTableColumn" minWidth="20.0" prefWidth="54.0" text="Sex" />
+                                    <TableColumn fx:id="enemyLevelTableColumn" maxWidth="173.0" minWidth="27.0" prefWidth="44.0" text="Level" />
+                                    <TableColumn fx:id="enemyDeleteTableColumn" minWidth="20.0" prefWidth="117.0" />
+                                    <TableColumn minWidth="339.0" prefWidth="75.0" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </VBox>
+                        <HBox fx:id="enemyLabelHBox" alignment="CENTER" prefHeight="100.0" prefWidth="703.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowSpan="2">
+                           <children>
+                              <VBox alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="242.0" prefWidth="254.0">
+                                 <children>
+                                    <HBox alignment="CENTER_RIGHT" fillHeight="false" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name: " textAlignment="RIGHT" wrappingWidth="75.58203125">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <TextField fx:id="enemyNameTextField" onAction="#onEnemyNameTextField" prefHeight="25.0" prefWidth="75.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Level: " textAlignment="RIGHT" wrappingWidth="75.7421875">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <TextField fx:id="enemyLevelTextField" onAction="#onEnemyLevelTextField" prefWidth="75.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Base health: " textAlignment="RIGHT" wrappingWidth="75.462890625">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <TextField fx:id="enemyBaseHealthTextField" onAction="#onEnemyBaseHealthTextField" prefWidth="75.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Health: " textAlignment="RIGHT" wrappingWidth="75.552734375">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <TextField fx:id="enemyHealthTextField" onAction="#onEnemyHealthTextField" prefWidth="75.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Stamina: " textAlignment="RIGHT" wrappingWidth="75.57421875">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <TextField fx:id="enemyStaminaTextField" onAction="#onEnemyStaminaTextField" prefWidth="75.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Weight: " textAlignment="RIGHT" wrappingWidth="75.203125">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <TextField fx:id="enemyWeightTextField" onAction="#onEnemyWeightTextField" prefHeight="25.0" prefWidth="75.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Armour: " textAlignment="RIGHT" wrappingWidth="75.130859375">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <TextField fx:id="enemyArmourTextField" onAction="#onEnemyArmourTextField" prefHeight="25.0" prefWidth="75.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attack speed: " textAlignment="RIGHT" wrappingWidth="75.8828125">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <TextField fx:id="enemyAttSpeedTextField" onAction="#onEnemyAttSpeedTextField" prefHeight="25.0" prefWidth="75.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="242.0" prefWidth="392.0">
+                                 <children>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Coordinates: " textAlignment="RIGHT" wrappingWidth="130.85546875">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <TextField fx:id="enemyCoordTextField" onAction="#onEnemyCoordTextField" prefHeight="25.0" prefWidth="130.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Symbol: " textAlignment="RIGHT" wrappingWidth="130.3984375">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <TextField fx:id="enemySymoblTextField" onAction="#onEnemySymbolTextField" prefHeight="25.0" prefWidth="130.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Type: " textAlignment="RIGHT" wrappingWidth="130.3125">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <TextField fx:id="enemyTypeTextField" editable="false" prefWidth="130.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sex: " textAlignment="RIGHT" wrappingWidth="130.046875">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <TextField fx:id="enemySexTextField" onAction="#onEnemySexTextField" prefWidth="130.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Initiative: " textAlignment="RIGHT" wrappingWidth="130.96484375">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <TextField fx:id="enemyInitiativeTextField" onAction="#onEnemyInitiativeTextField" prefWidth="130.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Accuracy: " textAlignment="RIGHT" wrappingWidth="130.1328125">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <TextField fx:id="enemyAccuracyTextField" onAction="#onEnemyAccuracyTextField" prefWidth="130.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="349.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Median attack damage: " textAlignment="RIGHT" wrappingWidth="130.189453125">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <TextField fx:id="enemyMedAttDmgTextField" onAction="#onEnemyMedAttDmgTextField" prefWidth="130.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Base attack damage: " textAlignment="RIGHT" wrappingWidth="130.62109375">
+                                             <HBox.margin>
+                                                <Insets right="2.0" />
+                                             </HBox.margin></Text>
+                                          <TextField fx:id="enemyBaseAttDmgTextField" onAction="#onEnemyBaseAttDmgTextField" prefWidth="130.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </HBox>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="2" GridPane.rowSpan="2">
+                           <center>
+                              <TableView fx:id="enemyInvTableView" focusTraversable="false" maxWidth="600.0" scaleShape="false" BorderPane.alignment="CENTER">
+                                 <columns>
+                                    <TableColumn fx:id="enemyInvItemNameTableColumn" minWidth="20.0" prefWidth="141.0" text="Name" />
+                                    <TableColumn fx:id="enemyInvItemTypeTableColumn" minWidth="20.0" prefWidth="68.0" text="Type" />
+                                    <TableColumn fx:id="enemyInvItemDefAttTableColumn" minWidth="20.0" prefWidth="76.0" text="Def/Dmg" />
+                                    <TableColumn fx:id="enemyInvItemWeightTableColumn" minWidth="20.0" prefWidth="59.0" text="Weight" />
+                                    <TableColumn fx:id="enemyInvItemSymbolTableColumn" minWidth="20.0" prefWidth="54.0" text="Symbol" />
+                                    <TableColumn fx:id="enemyInvCoordTableColumn" minWidth="20.0" prefWidth="55.0" text="Coord" />
+                                    <TableColumn fx:id="enemyInvItemLevelTableColumn" minWidth="20.0" prefWidth="60.0" text="Level" />
+                                    <TableColumn fx:id="enemyInvEquipButtonTableColumn" minWidth="20.0" prefWidth="86.0" />
+                                    <TableColumn minWidth="600.0" prefWidth="75.0" />
+                                 </columns>
+                              </TableView>
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </GridPane>
+               </children>
+            </StackPane>
+         </center>
+         <bottom>
+            <HBox fx:id="closeButtonHBox" alignment="CENTER" prefHeight="85.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="EntChangesViewButton" mnemonicParsing="false" onAction="#onEnemyChangesButton" prefHeight="30.0" prefWidth="115.0" text="Entity changes">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="entControlCloseButton" mnemonicParsing="false" onAction="#onBackButtonPress" prefHeight="30.0" prefWidth="80.0" text="Back" />
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</StackPane>
